@@ -2,7 +2,6 @@
 Basic of selenium
 
 
-
                  extends                implements                   extends                 extends
 SearchContext(I)--------->WebDriver(I) -----------> RemoteWebDriver(c)---->ChromiumDriver(c)----------> ChromeDriver,Fiexfor Driver etc..
 
@@ -153,3 +152,164 @@ its a combination of relative and absolute x-path
 
     //div[@id="gh-top"]/ul[2]/li[3] 
 		driver.findElement(By.xpath("//div[@id='gh-top']/ul[2]/li[3]")).click();
+
+*********************************************************Web_Driver_Method**************************************************************
+
+1 get method
+2 conditional method
+3 browser method
+4 navigation method
+5 wait method 
+
+1.get method ---> (We can access these method through WebDriver instance)
+                 //all get method releted to web page
+		 
+	1 get(url) ---> open the url on the browser
+                 its used to launch application URL return type is VOID
+		 driver.get("https://www.mercedes-benz.com/en/");
+	
+	2 getTitle() ---> return title of the page
+	        its used to return title of web page  retrun typr STRING
+		String e = driver.getTitle();
+		System.out.println(e);
+		
+	3 getCurrentUrl() ---> returb url of the page
+	     its return URL of current Web page return type STRING
+	     String as = driver.getCurrentUrl();
+	     System.out.println(as);
+		
+	4 getPageSource() ---> return source code of page
+	     its return page Source return type STRING
+	     String r = driver.getPageSource();
+	     System.out.println(r);
+	
+	5 getWindowHandle() ---->  return ID of the single Browser window
+	     its return  ID of single Browser Windows  each time when we launch new browser windows the ID keep Chaning return type STRING 
+             String r =  driver.getWindowHandle();
+	     System.out.println(r);
+	  
+	6 getWindowHandles() ----> return ID's of the multiple browser window
+	   its return ID of multiple Browser Windows if ther is only one windows open its provies only one ID
+	   return type STRING
+	   Set<String> r2=  driver.getWindowHandles();
+	   System.out.println(r2);
+
+2 conditional method---->(access this command through web element)
+                 // we can access or apply the methods on web element
+                 // all methods return boolean.
+   
+        1 isDisplayed()----->
+	         method used to verify presence of a web element within the webpage.            
+	         boolean a = driver.findElement(By.cssSelector("span.a-truncate-cut")).isDisplayed();
+                 System.out.println(a);
+	   
+	2 isEnabled()--->
+	           we can check  enable /disable status of the element /oprational element
+	           is primaryly used with button.
+	          its mostly user for input boxes,dropdown ,radio button and check boxes
+	           Boolean en = driver.findElement(By.className("brandhub-relaunch-button brandhub-relaunch-button--white brandhub-relaunch-button--size-m brandhub-search__button-right")).isEnabled();			
+	           System.out.println(en);
+			   
+	3 isSelected() ----->
+	     we can use to check the element is selected or not
+		 apply for drop down ,radio button
+		 Boolean e1 = driver.findElement(By.className("brandhub-relaunch-button brandhub-relaunch-button--white brandhub-relaunch-button--size-m brandhub-search__button-right")).isSelected();
+		System.out.println(e1);
+
+
+
+3 browser method ------->
+              1 driver.close();//its close only one window 
+              2 driver.quit(); // its close multiple window
+
+         // for close the browser
+         //its better to use quit insted of close because close have some error like(WARNING: Connection reset
+         java.net.SocketException: Connection reset)
+
+4 wait method-------> 
+       
+                 ElementNotFoundException: when locater in inccorect
+		 NoSuchElementException : because of Synchronizaion problem 
+		 Default time of wait is 0
+                 execution speed faster appliction or automation script faster than application respons that will cause synchronizaion problem
+		
+	//provide by selenium (in every wait statment still we will have chance of getting Exception if it take more time insted of specified time for that we use try catch block)
+		   1 implicit wait()--->
+		   its create only once at starting after creating driver
+                   implcite is applicable all the statment in our automation and its alive till close the driver		
+            
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));		   
+		 
+		    2 explicit wait()--->
+		        it work on  condition and time 
+			its applied to specific web element
+			in that in 1st consider the condition and then cosider time 
+			class used for explicit------> WebDriverWait my = new WebDriverWait(driver,time);  
+			        
+				   WebDriver driver = new ChromeDriver();
+		                   WebDriverWait dr = new WebDriverWait(driver,Duration.ofSeconds(10));
+		                      --->condition specific using until()
+				   dr.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img[src='/images/Toolsqa.jpg']")));
+                                   boolean d =  driver.findElement(By.cssSelector("img[src='/images/Toolsqa.jpg']")).isDisplayed();
+                                   System.out.println(d);
+				   
+				   or 
+				   
+				    WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10)); //Declaration  
+                                    WebElement w =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img[src='/images/Toolsqa.jpg']")));
+                                     w.isDisplayed();
+		
+	        3 fluent wait()------->
+			
+		//provied by java 
+		 thread.sleep(2000)
+		 if web take less time to open  and we provide sleep more time the remaning time is wested or web take more time and we give sleep less time it through exception
+		 every time we have to use sleep
+		 it become a poor peformance
+
+		 
+5 navigation method--------> 
+                             -methods call from driver
+                             - all method has void return type
+  
+      1 navigate().to()----->  
+				  - the diff between get() and navigate().to in get we only pass URL in string formate
+				  - in navigate().to  we pass URL in String and URL object
+				  
+				  driver.navigate().to("https://www.sony.co.in/homepage");
+				                    --->
+			             internaly calling Get method
+		         
+				  - URL myurel =new URL("https://www.sony.co.in/homepage");
+				  - driver.navigate().to(myurel);
+		                         
+       2 navigate().back()--->
+       3 navigate().forward()--->
+		
+		driver.navigate().to("\"https://www.sony.co.in/homepage\"");
+		driver.navigate().to("\"https://www.apple.com/\"");
+		
+		driver.navigate().back();
+		System.out.println(driver.getCurrentUrl());
+		
+		driver.navigate().forward();
+		System.out.println(driver.getCurrentUrl());					 
+		
+	4 navigate().refresh()--->
+		  used for refreshthe page 
+		  driver.navigate().refresh();
+		 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
