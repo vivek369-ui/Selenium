@@ -41,7 +41,7 @@ methods :
  
  
  ------------------------------------------locaters------------------------------
- //locaters//   
+  
 
 //normal Selector//
 
@@ -148,7 +148,7 @@ methods :
                 //div[@id="gh-top"]/ul[2]/li[3] 
 		driver.findElement(By.xpath("//div[@id='gh-top']/ul[2]/li[3]")).click();
 
-*************************************************Web_Driver_Method**************************************************************
+----------------------------------------Web_Driver_Method-------------------------------------------------------------------
 
 1 get method
 2 conditional method
@@ -157,6 +157,7 @@ methods :
 5 wait method 
 
 1.get method ---> 
+
                  (We can access these method through WebDriver instance)
                  //all get method releted to web page
 		 
