@@ -153,7 +153,7 @@ its a combination of relative and absolute x-path
     //div[@id="gh-top"]/ul[2]/li[3] 
 		driver.findElement(By.xpath("//div[@id='gh-top']/ul[2]/li[3]")).click();
 
-*********************************************************Web_Driver_Method**************************************************************
+*************************************************Web_Driver_Method**************************************************************
 
 1 get method
 2 conditional method
@@ -161,7 +161,8 @@ its a combination of relative and absolute x-path
 4 navigation method
 5 wait method 
 
-1.get method ---> (We can access these method through WebDriver instance)
+1.get method ---> 
+                 (We can access these method through WebDriver instance)
                  //all get method releted to web page
 		 
 	1 get(url) ---> open the url on the browser
@@ -194,7 +195,9 @@ its a combination of relative and absolute x-path
 	   Set<String> r2=  driver.getWindowHandles();
 	   System.out.println(r2);
 
-2 conditional method---->(access this command through web element)
+2 conditional method---->
+
+                  (access this command through web element)
                  // we can access or apply the methods on web element
                  // all methods return boolean.
    
@@ -219,6 +222,7 @@ its a combination of relative and absolute x-path
 
 
 3 browser method ------->
+
               1 driver.close();//its close only one window 
               2 driver.quit(); // its close multiple window
 
@@ -269,6 +273,7 @@ its a combination of relative and absolute x-path
 
 		 
 5 navigation method--------> 
+
                              -methods call from driver
                              - all method has void return type
   
