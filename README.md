@@ -45,7 +45,7 @@ methods :
 
 //normal Selector//
 
-        // all normal locater are find using only attribute
+        // all normal locater are find using only attribute value or tag name
        // its used to find (locate) the element //pass attribut into (By.) class
           
 			--->pass locater(location) using By class
