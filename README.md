@@ -44,7 +44,7 @@ methods :
  //locaters//    (all normal locater are find using only attribute)
 
 ***normal Selector
- // its used to find (locate) the element //pass attribut into (By.) class
+// its used to find (locate) the element //pass attribut into (By.) class
               | 
 			        |       --->pass locater(location) using By class
  1.driver.findelment(   By.id()   ).sendKeys("new mobile");
