@@ -4,8 +4,8 @@ Basic of selenium
                       extends                implements                   extends                 extends
 		 
      SearchContext(I)--------->WebDriver(I) -----------> RemoteWebDriver(c)----->ChromiumDriver(c)----------> ChromeDriver,Fiexfor Driver etc..
-
-    -whatever we see on web page in called web element
+     - WebDriver Contain 5 Interfaces
+     -whatever we see on web page in called web element
     -selenium have a methods using that we interact with web elements
     -Locater methods : its used to find location of perticular (web element)   element(tag) (locate the element on web page)
     -- its used to specifiey single wen element
