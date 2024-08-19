@@ -4,14 +4,27 @@ Basic of selenium
                       extends                implements                   extends                 extends
 		 
      SearchContext(I)--------->WebDriver(I) -----------> RemoteWebDriver(c)----->ChromiumDriver(c)----------> ChromeDriver,Fiexfor Driver etc..
+     
+     -RemoteDriver Driver Extends other all drivers
      - WebDriver Contain 5 Interfaces
      -whatever we see on web page in called web element
     -selenium have a methods using that we interact with web elements
     -Locater methods : its used to find location of perticular (web element)   element(tag) (locate the element on web page)
+    --jar file collection of .class files
     -- its used to specifiey single wen element
     Action methods:after finding the web element what action will be perform its another part
-
-
+    Maven : Project bulid  tool (automatically configur jar file) and all project
+            3 lifecycle in maven 
+	      1 clean : when we run clean cycle old .class file delete
+              2 Default : 7 diff phase  
+	                  1 validate : check project valid or not comand-->MVN Validate
+		          2 compile   :if valid porject then compile---> MVN compile
+	                  3 test    : its run all test case which we writen-->MVN test
+		          4 package   : it will validate,compile,test and then packageing create a jar file--->MVN package
+	                  5 verify   : varify jar file-->MVN verify
+		          6 install  : installed in local repo-->install
+	                  7 deploy   : jar file depoly in server-->deploy
+	      3 Site  : prepare site doc
 -----------------------------------------------------------------------------------------------------
 methods :
  
