@@ -5,15 +5,17 @@ Basic of selenium
 		 
      SearchContext(I)--------->WebDriver(I) -----------> RemoteWebDriver(c)----->ChromiumDriver(c)----------> ChromeDriver,Fiexfor Driver etc..
                       extends
-       SearchContext(I)-------->WebElement(I)
+     SearchContext(I)-------->WebElement(I)
      
      -RemoteDriver Driver Extends other all drivers
      - WebDriver Contain 5 Interfaces
+      WEbDriver(I): methods used for handle the browser 
+     WebElement(I) : its a interface used for handling WebElements(it represent perticuler web element on web site)
      -whatever we see on web page in called web element
     -selenium have a methods using that we interact with web elements
     -Locater methods : its used to find location of perticular (web element)   element(tag) (locate the element on web page)
     --jar file collection of .class files
-    -- its used to specifiey single wen element
+    -- its used to specifiey single web element
     Action methods:after finding the web element what action will be perform its another part
     Maven : Project bulid  tool (automatically configur jar file) and all project
             maven has 3 repository 
@@ -124,8 +126,8 @@ methods :
 			         its start from beging (traverse through each node till it find element)
 				 absolute start from /
 	                        
-						    	(both same for performance)                    ^
-							                                               |
+						    	(both same for performance)                    
+							                                               
 	                       -- relative X-path(partial X-path) :: //*[@id="component-id"]/div[1]/div[5]/ul[1]/li[3]/button /--> directly jump to the element
 				  here we user single or multiple attribute
 	                          using relative directly jump to the elements attribute	
@@ -146,13 +148,15 @@ methods :
 			    driver.findElement(By.xpath("//a[@title='My eBay or @class='gh-eb-li-a gh-rvi-menu']")).click();
 
      4. X-path with inner text(here we not used any attribute its used for link and innertext)              
-         method :- text()
+         function :- text()
         //*[text()='Expand Watch List']
 	driver.findElement(By.xpath("//a[text()='Watchlist']")).click();
 	
     5. X-path with contains
-      method:- contains()
+      function:- contains()
       //img[contains(@role,'pre')]
+      or
+      //img[contains(text(),'pre')]
      driver.findElement(By.xpath("//img[contains(@role,'pre')]")).click();
                                                  --->   -->               
 				    name of attribut  ,   value of attribute
@@ -160,8 +164,10 @@ methods :
 			(contains and start-with used when locate dynamic web element)
 						
     6. X-path with start-with 
-       methods:- starts-with()
+       function:- starts-with()
       //img[starts-with(@role,'pre')]
+      or
+      //img[starts-with(text(),'pre')]
       driver.findElement(By.xpath("//img[starts-with(@role,'pre')]")).click();
 
      7. X-path with chained  (if we dont have inner text and attribut of the element then use parent of that element and write X-path)
@@ -170,17 +176,22 @@ methods :
                 //div[@id="gh-top"]/ul[2]/li[3] 
 		driver.findElement(By.xpath("//div[@id='gh-top']/ul[2]/li[3]")).click();
 
-----------------------------------------Web_Driver Methods-------------------------------------------------------------------
+     8. X-path Axeses :: 
+                         find x-path using relationship 
+			      1 parent 2 child 3 ancestor 4 descendant 5 self 6 sibilng 7 following silbilg
+	                 
+----------------------------------------Web_Driver AND Web_Element Methods-------------------------------------------------------------------
 
-				      
-    1 get method 
-    2 conditional method
-    3 browser method
-    4 navigation method
-    5 wait method 
-
-		    
-1.get method ---> 
+    1 get method -->Web_Driver
+    2 browser method --> Web_Driver
+    3 navigation method --> Web_Driver
+    4 wait method -- > Web_Driver
+    5 conditional method -->Web_Elemet
+   
+    
+1 Web_Driver(I) Method--->  
+    
+    1.get method ---> 
 
                  (We can access these method through WebDriver(I) instance)
                  //all get method releted to web page
@@ -215,34 +226,8 @@ methods :
 	   Set<String> r2=  driver.getWindowHandles();
 	   System.out.println(r2);
 
-2 conditional method---->
-
-                  (access this command through WebElement(I) instance)
-                 // we can access or apply the methods on web element
-                 // all methods return boolean.
-   
-        1 isDisplayed()----->
-	         method used to verify presence of a web element within the webpage.            
-	         boolean a = driver.findElement(By.cssSelector("span.a-truncate-cut")).isDisplayed();
-                 System.out.println(a);
-	   
-	2 isEnabled()--->
-	           we can check  enable /disable status of the element /oprational element
-	           is primaryly used with button.
-	          its mostly user for input boxes,dropdown ,radio button and check boxes
-	           Boolean en = driver.findElement(By.className("brandhub-relaunch-button brandhub-relaunch-button--white brandhub-relaunch-button--size-m brandhub-search__button-right")).isEnabled();			
-	           System.out.println(en);
-			   
-	3 isSelected() ----->
-	     we can use to check the element is selected or not
-		 apply for drop down ,radio button
-		 Boolean e1 = driver.findElement(By.className("brandhub-relaunch-button brandhub-relaunch-button--white brandhub-relaunch-button--size-m brandhub-search__button-right")).isSelected();
-		System.out.println(e1);
-
-
-
-3 browser method ------->
-
+    2 browser method ------->
+                    void
 	      //WeBDeriver(I) methods
               1 driver.close();//its close only one window 
               2 driver.quit(); // its close multiple window
@@ -251,7 +236,41 @@ methods :
          //its better to use quit insted of close because close have some error like(WARNING: Connection reset
          java.net.SocketException: Connection reset)
 
-4 wait method-------> 
+    3 navigation method--------> 
+                                   void
+                              --WeBDeriver(I) methods
+                              -methods call from driver
+                             - all method has void return type
+  
+      1 navigate().to()----->  
+				  - the diff between get() and navigate().to in get we only pass URL in string formate
+				  - in navigate().to  we pass URL in String and URL object
+				  
+				  driver.navigate().to("https://www.sony.co.in/homepage");
+				                    --->
+			             internaly calling Get method
+		         
+				  - URL myurel =new URL("https://www.sony.co.in/homepage");
+				  - driver.navigate().to(myurel);
+		                         
+       2 navigate().back()--->
+       3 navigate().forward()--->
+		
+		driver.navigate().to("\"https://www.sony.co.in/homepage\"");
+		driver.navigate().to("\"https://www.apple.com/\"");
+		
+		driver.navigate().back();
+		System.out.println(driver.getCurrentUrl());
+		
+		driver.navigate().forward();
+		System.out.println(driver.getCurrentUrl());					 
+		
+	4 navigate().refresh()--->
+		  used for refreshthe page 
+		  driver.navigate().refresh();
+
+
+    5 wait method-------> 
        
                  ElementNotFoundException: when locater in inccorect
 		 NoSuchElementException : because of Synchronizaion problem 
@@ -291,57 +310,76 @@ methods :
 		 if web take less time to open  and we provide sleep more time the remaning time is wested or web take more time and we give sleep less time it through exception
 		 every time we have to use sleep
 		 it become a poor peformance
-
-		 
-5 navigation method--------> 
-
-                              --WeBDeriver(I) methods
-                             -methods call from driver
-                             - all method has void return type
+	 
   
-      1 navigate().to()----->  
-				  - the diff between get() and navigate().to in get we only pass URL in string formate
-				  - in navigate().to  we pass URL in String and URL object
-				  
-				  driver.navigate().to("https://www.sony.co.in/homepage");
-				                    --->
-			             internaly calling Get method
-		         
-				  - URL myurel =new URL("https://www.sony.co.in/homepage");
-				  - driver.navigate().to(myurel);
-		                         
-       2 navigate().back()--->
-       3 navigate().forward()--->
-		
-		driver.navigate().to("\"https://www.sony.co.in/homepage\"");
-		driver.navigate().to("\"https://www.apple.com/\"");
-		
-		driver.navigate().back();
-		System.out.println(driver.getCurrentUrl());
-		
-		driver.navigate().forward();
-		System.out.println(driver.getCurrentUrl());					 
-		
-	4 navigate().refresh()--->
-		  used for refreshthe page 
-		  driver.navigate().refresh();
+4 WebElements(I) Methods---->
 
+                  (access this command through WebElement(I) instance)
+                 // we can access or apply the methods on web element
+                 // all methods return boolean.
+   
+        1 isDisplayed()----->
+	         method used to verify presence of a web element within the webpage.            
+	         boolean a = driver.findElement(By.cssSelector("span.a-truncate-cut")).isDisplayed();
+                 System.out.println(a);
+	   
+	2 isEnabled()--->
+	           we can check  enable /disable status of the element /oprational element
+	           is primaryly used with button.
+	          its mostly user for input boxes,dropdown ,radio button and check boxes
+	           Boolean en = driver.findElement(By.className("brandhub-relaunch-button brandhub-relaunch-button--white brandhub-relaunch-button--size-m brandhub-search__button-right")).isEnabled();			
+	           System.out.println(en);
+			   
+	3 isSelected() ----->
+	         we can use to check the element is selected or not
+		 apply for drop down ,radio button
+		 Boolean e1 = driver.findElement(By.className("brandhub-relaunch-button brandhub-relaunch-button--white brandhub-relaunch-button--size-m brandhub-search__button-right")).isSelected();
+		System.out.println(e1);
 
-6 methods----->   
-                   
-                 WEbDriver(I): methods used for handle the browser 
-		 WebElement(I) : its a interface used for handling WebElements
+       4 findelement()----> 
                     WebElement Return type
                   - it gives you a reference to that element on the web page, allowing you to interact with 
-		  - it using various methods provided by the WebElement interface.       
-		1. findelements()----> 
-                                      - List<WebElement> findElement(By by) return type LIST<WebElement>
-				       - WebElement findElement(BY by) return type WenElement
-                  
-                
+		  - it using various methods provided by the WebElement interface.
+    
+                     - it returns all the  elements matching to the  x-path 
+		      -  return type is list
+	              -if there is no element found return empity list
+                    - List<WebElement> findElement(By by) return type LIST<WebElement>
+		       List<WebElement> r =obj.findElements(By.className("firstname"));
+	                                &
+	               - it return the single web element retutn type WebElement
+		       - it return 1 st occurance
+	                - if there is no element found it will through no such element exception      
+                          
+		      -  WebElement s = obj.findElement(By.className("first"));
+	
+           5 submit()--->
+	                  void
+		         - its click on submit or ok button here the condition is that it's only work with form tag
+                         -we can write any locater of form for submit()
+		 obj.findElement(By.xpath("//input[@class='form-control input-block js-login-field']")).sendKeys("vivek");
+		obj.findElement(By.xpath("//input[@class='form-control form-control input-block js-password-field']")).sendKeys("ram");
+		obj.findElement(By.xpath("//input[@class='form-control form-control input-block js-password-field']")).submit(); 
+                                                or
+		obj.findElement(By.xpath("//input[@class='form-control input-block js-login-field']")).sendKeys("vivek");
+		obj.findElement(By.xpath("//input[@class='form-control form-control input-block js-password-field']")).sendKeys("ram");
+		obj.findElement(By.xpath("//input[@class='btn btn-primary btn-block js-sign-in-button']")).click(); 				
+		
+		   
+
+           6 sendKey()---->
+	                      void
+	                    -send charcter sequance in textbox
+	                   driver.findElement(By.cssSelector("input[class='query-input__form-input']")).sendKeys("i ot it ");
+
+		       
+              
+
+		 
 
 
-   
+
+
 ------------------------------------ERRORS---------------------------------------------------
                                        
 					//how to resolve error
