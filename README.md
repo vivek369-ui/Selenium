@@ -4,6 +4,8 @@ Basic of selenium
                       extends                implements                   extends                 extends
 		 
      SearchContext(I)--------->WebDriver(I) -----------> RemoteWebDriver(c)----->ChromiumDriver(c)----------> ChromeDriver,Fiexfor Driver etc..
+                      extends
+       SearchContext(I)-------->WebElement(I)
      
      -RemoteDriver Driver Extends other all drivers
      - WebDriver Contain 5 Interfaces
@@ -62,6 +64,7 @@ methods :
 
 //normal Selector//
 
+	// all methods  in BY class ,return type of method is by class object
         // all normal locater are find using only attribute value or tag name
        // its used to find (locate) the element //pass attribut into (By.) class
           
@@ -117,14 +120,16 @@ methods :
 	--X-path work on dom
 	-- 2 type of x-path ::  --absolute X-path(full X-path) :: /html/body/div[1]/nav/div[1]/div[5]/ul[1]/li[3]/button
 	                          never specifiy any attribute
+			          its not recomnded for under devlopment project used olny when UI fix
 			         its start from beging (traverse through each node till it find element)
 				 absolute start from /
 	                        
-						    	(both same for performance)
-							
+						    	(both same for performance)                    ^
+							                                               |
 	                       -- relative X-path(partial X-path) :: //*[@id="component-id"]/div[1]/div[5]/ul[1]/li[3]/button /--> directly jump to the element
-					here we user single or multiple attribute
+				  here we user single or multiple attribute
 	                          using relative directly jump to the elements attribute	
+			          
 			        	relative start from //
 					                creating relative x- path two types ::  1 autmomatically
 							                                        2 manually(own X-path)
@@ -165,9 +170,9 @@ methods :
                 //div[@id="gh-top"]/ul[2]/li[3] 
 		driver.findElement(By.xpath("//div[@id='gh-top']/ul[2]/li[3]")).click();
 
-----------------------------------------Web_Driver_Method-------------------------------------------------------------------
+----------------------------------------Web_Driver Methods-------------------------------------------------------------------
                                       
-1 get method
+1 get method 
 2 conditional method
 3 browser method
 4 navigation method
@@ -176,7 +181,7 @@ methods :
 		    
 1.get method ---> 
 
-                 (We can access these method through WebDriver instance)
+                 (We can access these method through WebDriver(I) instance)
                  //all get method releted to web page
 		 
 	1 get(url) ---> open the url on the browser
@@ -211,7 +216,7 @@ methods :
 
 2 conditional method---->
 
-                  (access this command through web element)
+                  (access this command through WebElement(I) instance)
                  // we can access or apply the methods on web element
                  // all methods return boolean.
    
@@ -237,6 +242,7 @@ methods :
 
 3 browser method ------->
 
+	      //WeBDeriver(I) methods
               1 driver.close();//its close only one window 
               2 driver.quit(); // its close multiple window
 
@@ -288,6 +294,7 @@ methods :
 		 
 5 navigation method--------> 
 
+                              --WeBDeriver(I) methods
                              -methods call from driver
                              - all method has void return type
   
@@ -321,13 +328,16 @@ methods :
 
 6 methods----->   
                    
-                - it gives you a reference to that element on the web page, allowing you to interact with 
-		 - it using various methods provided by the WebElement interface.
+                 WEbDriver(I): methods used for handle the browser 
+		 WebElement(I) : its a interface used for handling WebElements
+                    WebElement Return type
+                  - it gives you a reference to that element on the web page, allowing you to interact with 
+		  - it using various methods provided by the WebElement interface.       
 		1. findelements()----> 
-                                      - List<WebElement> findElement(By by) return type LIST
-				       - WebElement findElement(BY by) return type WEBELEMENT
-                     
-
+                                      - List<WebElement> findElement(By by) return type LIST<WebElement>
+				       - WebElement findElement(BY by) return type WenElement
+                  
+                
 
 
    
@@ -335,9 +345,8 @@ methods :
                                        
 					//how to resolve error
     unsupported class version : using maven clean, it will clear old .class file  after that for genrating new .class file click on (generate sources)
-
-
-
+    Element not interactable :  
+----------------------------------------Qustions--------------------------------------
 
 
 
