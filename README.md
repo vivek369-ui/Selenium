@@ -171,12 +171,13 @@ methods :
 		driver.findElement(By.xpath("//div[@id='gh-top']/ul[2]/li[3]")).click();
 
 ----------------------------------------Web_Driver Methods-------------------------------------------------------------------
-                                      
-1 get method 
-2 conditional method
-3 browser method
-4 navigation method
-5 wait method 
+
+				      
+    1 get method 
+    2 conditional method
+    3 browser method
+    4 navigation method
+    5 wait method 
 
 		    
 1.get method ---> 
