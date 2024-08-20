@@ -14,6 +14,10 @@ Basic of selenium
     -- its used to specifiey single wen element
     Action methods:after finding the web element what action will be perform its another part
     Maven : Project bulid  tool (automatically configur jar file) and all project
+            maven has 3 repository 
+	               1 local : m2
+		       2 remote : repo1.maven.com
+	               3  Central : mvnrepository.com
             3 lifecycle in maven 
 	      1 clean : when we run clean cycle old .class file delete
               2 Default : 7 diff phase  
@@ -23,7 +27,7 @@ Basic of selenium
 		          4 package   : it will validate,compile,test and then packageing create a jar file--->MVN package
 	                  5 verify   : varify jar file-->MVN verify
 		          6 install  : installed in local repo-->install
-	                  7 deploy   : jar file depoly in server-->deploy
+	                  7 deploy   : jar file depoly in server-->MVN deploy
 	      3 Site  : prepare site doc
 -----------------------------------------------------------------------------------------------------
 methods :
@@ -162,13 +166,14 @@ methods :
 		driver.findElement(By.xpath("//div[@id='gh-top']/ul[2]/li[3]")).click();
 
 ----------------------------------------Web_Driver_Method-------------------------------------------------------------------
-
+                                      
 1 get method
 2 conditional method
 3 browser method
 4 navigation method
 5 wait method 
 
+		    
 1.get method ---> 
 
                  (We can access these method through WebDriver instance)
@@ -312,8 +317,24 @@ methods :
 	4 navigate().refresh()--->
 		  used for refreshthe page 
 		  driver.navigate().refresh();
-		 
 
+
+6 methods----->   
+                   
+                - it gives you a reference to that element on the web page, allowing you to interact with 
+		 - it using various methods provided by the WebElement interface.
+		1. findelements()----> 
+                                      - List<WebElement> findElement(By by) return type LIST
+				       - WebElement findElement(BY by) return type WEBELEMENT
+                     
+
+
+
+   
+------------------------------------ERRORS---------------------------------------------------
+                                       
+					//how to resolve error
+    unsupported class version : using maven clean, it will clear old .class file  after that for genrating new .class file click on (generate sources)
 
 
 
