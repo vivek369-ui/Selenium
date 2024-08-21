@@ -435,8 +435,9 @@ methods :
     unsupported class version : using maven clean, it will clear old .class file  after that for genrating new .class file click on (generate sources)
     Element not interactable :  
 ----------------------------------------Qustions--------------------------------------
-handle shadowroot 
-how to get color of web element  : getcssvalue()
+     
+     handle shadowroot 
+    how to get color of web element  : getcssvalue()
 
 
 
