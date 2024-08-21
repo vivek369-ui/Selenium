@@ -325,18 +325,18 @@ methods :
 	   
 	2 isEnabled()--->
 	           we can check  enable /disable status of the element /oprational element
-	           is primaryly used with button.
+	           is primarly used with button.
 	          its mostly user for input boxes,dropdown ,radio button and check boxes
 	           Boolean en = driver.findElement(By.className("brandhub-relaunch-button brandhub-relaunch-button--white brandhub-relaunch-button--size-m brandhub-search__button-right")).isEnabled();			
 	           System.out.println(en);
 			   
 	3 isSelected() ----->
 	         we can use to check the element is selected or not
-		 apply for drop down ,radio button
+		 apply for radio button ,checkbox
 		 Boolean e1 = driver.findElement(By.className("brandhub-relaunch-button brandhub-relaunch-button--white brandhub-relaunch-button--size-m brandhub-search__button-right")).isSelected();
 		System.out.println(e1);
 
-       4 findelement()----> 
+        4 findelement()----> 
                     WebElement Return type
                   - it gives you a reference to that element on the web page, allowing you to interact with 
 		  - it using various methods provided by the WebElement interface.
@@ -353,7 +353,7 @@ methods :
                           
 		      -  WebElement s = obj.findElement(By.className("first"));
 	
-           5 submit()--->
+         5 submit()--->
 	                  void
 		         - its click on submit or ok button here the condition is that it's only work with form tag
                          -we can write any locater of form for submit()
@@ -367,27 +367,76 @@ methods :
 		
 		   
 
-           6 sendKey()---->
+          6 sendKey()---->
 	                      void
 	                    -send charcter sequance in textbox
+		            - we can also pass Keys. in send key 
 	                   driver.findElement(By.cssSelector("input[class='query-input__form-input']")).sendKeys("i ot it ");
-
-		       
-              
-
+		    - Keys--->
+                              keys enum provied by selenium we driver with the help of that we can pass the non text key into your web component
+		   ( IMP )obj.findElement(By.xpath("//input[@class='form-control input-block js-login-field']")).sendKeys("vivek",Keys.ENTER,"ram",Keys.ENTER);
+     
+          7 clear()--->
+	            void clear the text writen into a text box
+                      
+                      WebElement e = 	obj.findElement(By.xpath("//input[@class='form-control input-block js-login-field']"));
+                	e.sendKeys("vivek");
+	                e.clear();
 		 
+          8  getTagname()-->
+	                    return the tag or element name 
+	                    WebElement e = obj.findElement(By.xpath("//input[@class='form-control input-block js-login-field']"));
+	                     System.out.println(e.getTagName());
 
+          9 getAttribute()-->
+	                   it return the attribute value   
+	                   WebElement e = obj.findElement(By.xpath("//input[@class='form-control input-block js-login-field']"));
+	                   System.out.println(e.getAttribute("class"));
+		    
+          10 gettext()----> 
+	                    its return the inner text
+	                   String r =obj.findElement(By.xpath("//a[@class=\"label-link position-absolute top-0 right-0\"]")).getText();
+		           System.out.println(r);
+          
+          11 getShadowRoot()--->
+	                          SearchContext
+			   (Find all elements within the current context using the given mechanism.)
+	                        ShadowDom element : shadowDom allow us to create a subtree inside dom element
+			        without changing the excting layout , new webelement  introduce  with its  own style
+	                        shadowRoot(opne) then we handle the element
+                          obj.findElement(By.xpath("//a[@class=\"label-link position-absolute top-0 right-0\"]")).getShadowRoot().findElement(By.id("root")).getText();
+			  
+          12 getLocation()---> 
+	                      point
+	                      return the location of element 
+		       WebElement f =obj.findElement(By.xpath((("//a[@class='label-link position-absolute top-0 right-0']"))));
+		       System.out.println(f.getLocation());
+	                                                            or
+			Point location = sigin.getLocation();
+		        System.out.println("Location of X :"+ location.getX()+ "," +"Location of Y :" +location.getY());				     
 
-
-
+          13 getcssvalue()--->  
+	                   string
+		           also get font,width
+	                  color -->textcolor
+		          background-color-->bg color of text
+	                      obj.findElement(By.xpath(("//input[@class=\"btn btn-primary btn-block js-sign-in-button\"]"))).getCssValue("color");
+		       
+	  14 getSize()---> 
+                         Dimantaion
+			  return element width and hight
+                          System.out.println(obj.findElement(By.xpath((("//a[@class='label-link position-absolute top-0 right-0']")))).getSize());
+          15 getRect()-->
+	               return element location and size
+		
 ------------------------------------ERRORS---------------------------------------------------
                                        
 					//how to resolve error
     unsupported class version : using maven clean, it will clear old .class file  after that for genrating new .class file click on (generate sources)
     Element not interactable :  
 ----------------------------------------Qustions--------------------------------------
-
-
+handle shadowroot 
+how to get color of web element  : getcssvalue()
 
 
 
