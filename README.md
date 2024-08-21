@@ -414,7 +414,7 @@ methods :
 	                                                            or
 			Point location = sigin.getLocation();
 		        System.out.println("Location of X :"+ location.getX()+ "," +"Location of Y :" +location.getY());				     
-
+ 
           13 getcssvalue()--->  
 	                   string
 		           also get font,width
