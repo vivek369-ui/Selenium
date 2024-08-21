@@ -34,31 +34,6 @@ Basic of selenium
 	                  7 deploy   : jar file depoly in server-->MVN deploy
 	      3 Site  : prepare site doc
 -----------------------------------------------------------------------------------------------------
-methods :
- 
- WebDriver dr = new ChromeDriver();
- 
- dr.get("website url");
- 
-//its provide the actual title of website
- driver.getTitle();
- 
-// for close the browser
-//its better to use quit insted of close because close have some error like(WARNING: Connection reset java.net.SocketException: Connection reset)
- driver.close();
- driver.quit();
- 
-// maximize window
-  driver.manage().window().maximize();
-  
- // capture the value of text (string)
- String a =  getText();
- String s = driver.findElement(By.xpath("//a[text()='Watchlist']")).getText();	
- System.out.println(s);
-
-//is display (boolean)
- boolean a = driver.findElement(By.cssSelector("span.a-truncate-cut")).isDisplayed();
- System.out.println(a);
  
  
  ------------------------------------------locaters------------------------------
