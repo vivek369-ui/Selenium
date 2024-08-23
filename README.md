@@ -254,12 +254,14 @@ Basic of selenium
 		
 	//provide by selenium (in every wait statment still we will have chance of getting Exception if it take more time insted of specified time for that we use try catch block)
 		   1 implicit wait()--->
+                   its only work on find element and findelements only(its only wait until (load)find the element once element find then move forward it not care about other oprations)
 		   its create only once at starting after creating driver
                    implcite is applicable all the statment in our automation and its alive till close the driver		
             
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));		   
 		 
 		    2 explicit wait()--->
+                       its only have a constructor
 		        it work on  condition and time 
 			its applied to specific web element
 			in that in 1st consider the condition and then cosider time 
@@ -403,7 +405,12 @@ Basic of selenium
                           System.out.println(obj.findElement(By.xpath((("//a[@class='label-link position-absolute top-0 right-0']")))).getSize());
           15 getRect()-->
 	               return element location and size
-		
+
+  ---------------------------------------------------------Drop_Down-----------------------------------------
+  1 single select drop down 2 multi select drop down
+  select class used to handle drop down list
+  - for selecting element we have 3 option
+  -  index, value ,text		
 ------------------------------------ERRORS---------------------------------------------------
                                        
 					//how to resolve error
@@ -413,7 +420,7 @@ Basic of selenium
      
      handle shadowroot 
     how to get color of web element  : getcssvalue()
-
+  any 5 execption in selenum
 
 
 
