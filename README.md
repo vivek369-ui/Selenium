@@ -407,10 +407,47 @@ Basic of selenium
 	               return element location and size
 
   ---------------------------------------------------------Drop_Down-----------------------------------------
-  1 single select drop down 2 multi select drop down
-  select class used to handle drop down list
-  - for selecting element we have 3 option
-  -  index, value ,text		
+    
+              1 single select drop down 2 multi select drop down
+               - select class used to handle drop down list
+               - for selecting element we have 3 option
+	       -select class only used when the dropdown list created using select tag
+               - using click regular method handle drop down wegn select tag not present
+           1 selectbyindex()---->void
+	                       Select b = new Select(element);
+		               b.selectByIndex(3);
+	   2 selectbyvalue()--->void
+                              if value is attribut not in tag we cant use this method
+                             	b.selectByValue("search-alias=amazon-devices");
+          3 selectByVisibleText()----->void
+	                              select by visible text pass the text which is visibe in dropdown
+	                         b.selectByVisibleText("indes");
+	  4 isMultiple()------->boolean
+                                when dropdown list is multi select type it return true otherwise return false 
+				  System.out.println(b.isMultiple());
+	 5 deselectAll()---->void
+                                   d.deselectAll();
+				   
+	 6 deselectByIndex()---> void
+		b.deselectByIndex(2);
+  
+	 7 deselectByValue()--->void
+		b.deselectByValue("search-alias=amazon-devices");
+  
+	8 deselectvisibleText()--->void	
+		b.deselectByVisibleText("indes");
+  
+        9 getAllSelectedOptions()---> List<WebElement>
+	                  its return no. of selected options from drop down
+	       		  List<WebElement> f = b.getAllSelectedOptions();
+	    
+	10 getOptions()--->List<WebElement>
+                     its return the all  no. of option from  dropdown list 
+                              List<WebElement> d =b.getOptions();
+	                      System.out.println(d.size());
+		        -------------------------------Handling_MultiSelect_DropDownList------------------------
+	  
+	
 ------------------------------------ERRORS---------------------------------------------------
                                        
 					//how to resolve error
@@ -420,7 +457,8 @@ Basic of selenium
      
      handle shadowroot 
     how to get color of web element  : getcssvalue()
-  any 5 execption in selenum
+    any 5 execption in selenum
+     methdo is select class
 
 
 
