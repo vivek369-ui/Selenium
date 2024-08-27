@@ -407,17 +407,19 @@ Basic of selenium
 	               return element location and size
 
   ---------------------------------------------------------Drop_Down-----------------------------------------
-    
-              1 single select drop down 2 multi select drop down
-               - select class used to handle drop down list
+                       
+              1 single select drop down  1  Bootstrap Drop Down
+	      2 multi select drop down   2  hidden Drop Down
+               - select class used to handle drop down list Select b = new Select(element);
+	       - select class only used when the dropdown list created using select tag
                - for selecting element we have 3 option
-	       -select class only used when the dropdown list created using select tag
-               - using click regular method handle drop down wegn select tag not present
+               - using click regular method handle drop down when select tag not present 
+	       - other than select tag that drop down are BootStrap and hidden drop down
            1 selectbyindex()---->void
 	                       Select b = new Select(element);
 		               b.selectByIndex(3);
 	   2 selectbyvalue()--->void
-                              if value is attribut not in tag we cant use this method
+                              if value  attribut not in tag we cant use this method
                              	b.selectByValue("search-alias=amazon-devices");
           3 selectByVisibleText()----->void
 	                              select by visible text pass the text which is visibe in dropdown
