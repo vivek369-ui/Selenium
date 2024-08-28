@@ -449,12 +449,14 @@ Basic of selenium
 	                      System.out.println(d.size());
 		        -------------------------------Handling_Hiden_DropDownList------------------------
 	  
-------------------------------------Actions/Mouse Opration----------------------------------------------------------------------
+------------------------------------Actions/Mouse and KeyBorad Opration----------------------------------------------------------------------
                        
 			-predefine class provide by selenium through that we perfom opration
                         - 2 Action is available 1 Actions is a class and  2 Action is interface
                         - using that we can also performe KeyBoard actions
                               Actions ac = new Actions(Driver)
+		Mouse :	
+  
            moveToElement(web element) ------->Mouse Hover 
 	                    WebElement linkElement = obj.findElement(By.xpath("(//a[@data-toggle=\"dropdown\"])[1]")); 
 		            Actions actions = new Actions(obj);
@@ -482,6 +484,14 @@ Basic of selenium
 		WebElement drop =obj.findElement(By.xpath("//*[@id='droppable']"));
 		action.dragAndDrop(drag, drop).build().perform();
 
+
+             KeyBorad :
+
+      
+
+
+
+          
 ------------------------------------ERRORS---------------------------------------------------
                                        
 					//how to resolve error
