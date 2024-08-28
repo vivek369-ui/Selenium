@@ -447,7 +447,7 @@ Basic of selenium
                      its return the all  no. of option from  dropdown list 
                               List<WebElement> d =b.getOptions();
 	                      System.out.println(d.size());
-		        -------------------------------Handling_MultiSelect_DropDownList------------------------
+		        -------------------------------Handling_Hiden_DropDownList------------------------
 	  
 	
 ------------------------------------ERRORS---------------------------------------------------
