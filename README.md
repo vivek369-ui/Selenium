@@ -456,7 +456,7 @@ Basic of selenium
                         - using that we can also performe KeyBoard actions
                               Actions ac = new Actions(Driver)
            moveToElement(web element) ------->Mouse Hover 
-	                    WebElement linkElement = obj.findElement(By.xpath("(//a[@data-toggle=\"dropdown\"])[1]"));
+	                    WebElement linkElement = obj.findElement(By.xpath("(//a[@data-toggle=\"dropdown\"])[1]")); 
 		            Actions actions = new Actions(obj);
 		            actions.moveToElement(linkElement).build().perform()
 	                                                       ------------------> it will write every time when use Action class method and method end with build and perform
