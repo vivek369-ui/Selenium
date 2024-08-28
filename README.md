@@ -449,7 +449,39 @@ Basic of selenium
 	                      System.out.println(d.size());
 		        -------------------------------Handling_Hiden_DropDownList------------------------
 	  
-	
+------------------------------------Actions/Mouse Opration----------------------------------------------------------------------
+                       
+			-predefine class provide by selenium through that we perfom opration
+                        - 2 Action is available 1 Actions is a class and  2 Action is interface
+                        - using that we can also performe KeyBoard actions
+                              Actions ac = new Actions(Driver)
+           moveToElement(web element) ------->Mouse Hover 
+	                    WebElement linkElement = obj.findElement(By.xpath("(//a[@data-toggle=\"dropdown\"])[1]"));
+		            Actions actions = new Actions(obj);
+		            actions.moveToElement(linkElement).build().perform()
+	                                                       ------------------> it will write every time when use Action class method and method end with build and perform
+                                                            (build:-  will create action , perform:-  will complit the action)
+                         - if we write (perform) directly  it internaly build the action 
+			 
+           contextClick(web elemen) ----------->  Right Click 
+                         WebElement elemen = obj.findElement(By.xpath("//*[@class='context-menu-one btn btn-neutral']"));
+		         Actions action = new Actions(obj);
+		         action.contextClick(elemen).build().perform();
+   
+            doubleClick(elemn)----> Double Click
+
+				       WebElement elemn = obj.findElement(By.xpath("//*[@id='clickable']"));
+		                       Actions action = new Actions(obj);
+		                       action.doubleClick(elemn).build().perform();
+			 
+	    dragAndDrop(drag, drop)  -------->  Drag and Drop
+                                           - location of drag and drop befor performing the opration
+					   
+					    Actions action = new Actions(obj);
+		WebElement drag = obj.findElement(By.xpath("//*[@id='draggable']"));
+		WebElement drop =obj.findElement(By.xpath("//*[@id='droppable']"));
+		action.dragAndDrop(drag, drop).build().perform();
+
 ------------------------------------ERRORS---------------------------------------------------
                                        
 					//how to resolve error
