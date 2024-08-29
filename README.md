@@ -487,11 +487,13 @@ Basic of selenium
 
 
              KeyBorad :
-
-      
-
-
-
+              action.KeyUp--> unpress the key       
+              action.KeyDown-->pressing the key        ------>send the character A to Z use sendkey
+                           a.keyDown(Keys.CONTROL ).sendKeys("c").keyUp(Keys.CONTROL).build().perform();
+			  -last key always reles the first
+          on.click(ele)---> 
+	                   click method present both web element class and Actiond class diff is that 
+		           in web element not accept any parameter and in Actions it accept parameter
           
 ------------------------------------ERRORS---------------------------------------------------
                                        
