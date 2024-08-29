@@ -381,6 +381,7 @@ Basic of selenium
 	                        ShadowDom element : shadowDom allow us to create a subtree inside dom element
 			        without changing the excting layout , new webelement  introduce  with its  own style
 	                        shadowRoot(opne) then we handle the element
+			         ShadowRoot (user-agent) you can not access a shadowdom created by browser to display a control
                           obj.findElement(By.xpath("//a[@class=\"label-link position-absolute top-0 right-0\"]")).getShadowRoot().findElement(By.id("root")).getText();
 			  
           12 getLocation()---> 
