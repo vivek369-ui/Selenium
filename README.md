@@ -494,12 +494,21 @@ Basic of selenium
           on.click(ele)---> 
 	                   click method present both web element class and Actiond class diff is that 
 		           in web element not accept any parameter and in Actions it accept parameter
+---------------------------------JavascriptExecutor-------------------------------------
+                         
+			   (interface)
+       
+        executescript()--->
+	We can execute javaScript Statment using JavascriptExecutor.
+        when method like(click())..etc not able to execute js internally its  throw exception
+	- for overcome that issue we can directly execute js method  through executeScript("pass javascript statment") from JavascriptExecutor
           
 ------------------------------------ERRORS---------------------------------------------------
                                        
 					//how to resolve error
     unsupported class version : using maven clean, it will clear old .class file  after that for genrating new .class file click on (generate sources)
     Element not interactable :  
+    Element interceptedException : when method like(click())..etc not able to execute js internally its  throw exception
 ----------------------------------------Qustions--------------------------------------
      
      handle shadowroot 
