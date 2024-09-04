@@ -496,7 +496,7 @@ Basic of selenium
 		           in web element not accept any parameter and in Actions it accept parameter
 ---------------------------------JavascriptExecutor-------------------------------------
                          
-			   (interface)
+			 JavascriptExecutor (I)
 	We can execute javaScript Statment using JavascriptExecutor.
         when method like(click(),sendkey())..etc not able to execute js internally its  throw exception
 	- for overcome that issue we can directly execute js method  through executeScript("pass javascript statment") from JavascriptExecutor
@@ -535,6 +535,19 @@ Basic of selenium
 
           5 maximixe and minimize in %
 	          js.executeScript("document.body.style.zoom='30%'");
+------------------------------------------ScreenShort-------------------------------------------------------
+
+                     TakeScreenShort(I)
+                                              -->this method capture the screenshort
+                 - File datafile = shot.getScreenshotAs(OutputType.FILE);
+		                         ----> take screenshort in the form of file
+			   -->copy the screenshort file to  our won location
+		 - File targetfile = new File(System.getProperty("user.dir")+"\\Screenshort\\firstphoto.png");
+                                               ----------------------------> it will return current location   
+                 -  datafile.renameTo(targetfile);
+		     ---->  copy sourece file to our won location 
+		             
+    
 ------------------------------------ERRORS---------------------------------------------------
                                        
 					//how to resolve error
