@@ -497,12 +497,44 @@ Basic of selenium
 ---------------------------------JavascriptExecutor-------------------------------------
                          
 			   (interface)
-       
-        executescript()--->
 	We can execute javaScript Statment using JavascriptExecutor.
-        when method like(click())..etc not able to execute js internally its  throw exception
+        when method like(click(),sendkey())..etc not able to execute js internally its  throw exception
 	- for overcome that issue we can directly execute js method  through executeScript("pass javascript statment") from JavascriptExecutor
-          
+          - any js statment execute through   executescript()
+	
+         executescript()--->
+                                   use of this method we execute js directly
+				
+	                             WebElement inputbox=driver.findElement(By.xpath("(//*[@type='text'])[1]"));
+                                 	JavascriptExecutor js = (JavascriptExecutor) driver;
+				                                   ---->Set the value
+	                          js.executeScript("arguments[0].setAttribute('value','vick')", inputbox);
+			                            -----> store the web element(inputbox)
+                                   js.executeScript("arguments[0].click",button);
+
+				     scrollBar:
+                                     scrollBar belong to browser not to application
+				     3 aprroch using pixel no. or scroll the page till element display or till end of the page 
+	  1 scroll down page by pixel no.-->
+	            scrollBy(0,3000) -->             --->pixel
+	          js.executeScript("window.scrollBy(0,3000)", "");//scroll
+		  System.out.println(js.executeScript("return window.pageYOffset",""));//return pixel value
+
+	  2 scroll the page till element display -->
+                               WebElement jd = driver.findElement(By.xpath("(//*[@href='#popupDemo'])[16]"));
+		                js.executeScript("arguments[0].scrollIntoView()",jd);
+		                System.out.println(js.executeScript("return window.pageYOffset",""));//5535
+		  
+          3 till end of the page --->   .scrollBy
+	        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		System.out.println(js.executeScript("return window.pageYOffset",""));
+  
+         4 scrolling up initial position--->
+	                                 .scrollBy             ---(-)
+		js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
+
+          5 maximixe and minimize in %
+	          js.executeScript("document.body.style.zoom='30%'");
 ------------------------------------ERRORS---------------------------------------------------
                                        
 					//how to resolve error
