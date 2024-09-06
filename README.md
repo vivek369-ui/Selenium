@@ -626,7 +626,10 @@ Basic of selenium
 			option.addExtensions(fi); 
 			WebDriver driver = new ChromeDriver(option);	
 
-	    
+--------------------------------------BrokenLink-----------------------------------
+
+	      - whatever link  1st we check it have href value attribute because this is url which  we send to the server.
+              - response Status code imp to find the link is broken or not if the status code is >=400 mens its broken link  or <= 400 its not broken link
 ------------------------------------ERRORS---------------------------------------------------
                                        
 					//how to resolve error
