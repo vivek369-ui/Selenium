@@ -540,14 +540,93 @@ Basic of selenium
                      TakeScreenShort(I)
                                               -->this method capture the screenshort
                  - File datafile = shot.getScreenshotAs(OutputType.FILE);
-		                         ----> take screenshort in the form of file
+		                                                    ----> take screenshort in the form of file
 			   -->copy the screenshort file to  our won location
 		 - File targetfile = new File(System.getProperty("user.dir")+"\\Screenshort\\firstphoto.png");
                                                ----------------------------> it will return current location   
                  -  datafile.renameTo(targetfile);
 		     ---->  copy sourece file to our won location 
 		             
-    
+------------------------------------------Options class---------------------------------------------
+                            
+			       (refer web site : https://www.tutorialspoint.com/selenium/selenium_webdriver_chrome_options.htm)
+           -its a predifine class for each browser having option class like ChromeOptions or Edgeoptions etc... we can use this option class
+	    for control the browser  specific setting
+         1 addArguments()--> 
+	          1 headless:-
+	             ChromeOptions option = new ChromeOptions();
+		     option.addArguments("--headless"); // setting of headless testing
+                                           -------> its perform in dev-ops envirment
+		     WebDriver driver = new ChromeDriver(option);
+       
+                  2 run the test in incognito mode 
+                        ChromeOptions option = new ChromeOptions();
+			option.addArguments("--incognito");
+                                             
+		   options.addArguments("--start-maximized");
+                                          (is called flag)
+                                --disable-client-side-phishing-detection: Disables client-side phishing detection
+				--disable-component-extensions-with-background-pages: Disable some built-in extensions that aren't affected by --disable-extensions
+				--disable-default-apps: Disable installation of default apps
+				--disable-extensions: Disable all chrome extensions
+				--disable-features=InterestFeedContentSuggestions: Disables the Discover feed on NTP
+				--disable-features=Translate: Disables Chrome translation, both the manual option and the popup prompt when a page with differing language is detected.
+				--hide-scrollbars: Hide scrollbars from screenshots.
+				--mute-audio: Mute any audio
+				--no-default-browser-check: Disable the default browser check, do not prompt to set it as such
+				--no-first-run: Skip first run wizards
+				--ash-no-nudges: Avoids blue bubble "user education" nudges (eg., "… give your browser a new look", Memory Saver)
+				--disable-search-engine-choice-screen: Disable the 2023+ search engine choice screen
+				--propagate-iph-for-testing: Specifies which in-product help (IPH) features are allowed. If no arguments are provided, then all IPH features are disabled.
+                                --headless: Runs Chrome in headless mode (no UI).
+				--no-sandbox: Disables the sandboxing feature (is a security technique that involves running code or applications in an isolated environment to test and 
+                                    analyze them for threats).
+				--disable-gpu: Disables GPU hardware acceleration (often used with --headless).
+				--start-maximized: Opens Chrome in maximized mode.
+				--incognito: Opens Chrome in incognito mode.
+				--disable-extensions: Disables all Chrome extensions.
+				--disable-popup-blocking: Disables the popup blocking feature.
+				--disable-infobars: Disables the 'Chrome is being controlled by automated test software' infobar.
+				--disable-dev-shm-usage: Disables the use of /dev/shm (shared memory) which can be useful in Docker environments.
+				--remote-debugging-port=<port>: Enables remote debugging on the specified port.
+				--user-data-dir=<path>: Specifies the user data directory for Chrome profiles.
+				Privacy and Security Flags
+				--disable-client-side-phishing-detection: Disables client-side phishing detection.
+				--disable-popup-blocking: Disables the blocking of pop-ups.
+				--disable-web-security: Disables web security, including CORS. This flag is often used for testing but should be used with caution.
+				--disable-features=<feature1>,<feature2>: Disables specific Chrome features (e.g., --disable-features=NetworkService,Sync).
+				Performance and Testing Flags
+				--enable-automation: Enables automation mode.
+				--disable-background-timer-throttling: Disables background timer throttling.
+				--disable-renderer-backgrounding: Disables backgrounding of renderer processes.
+				--disable-accelerated-2d-canvas: Disables accelerated 2D canvas.
+				UI and Display Flags
+				--disable-notifications: Disables notifications.
+				--disable-translate: Disables automatic translation of web pages.
+				--kiosk: Opens Chrome in kiosk mode (full screen).
+				Experimental Features
+				--enable-experimental-web-platform-features: Enables experimental web platform features.
+				--enable-features=<feature1>,<feature2>: Enables specific Chrome features (e.g., --enable-features=NetworkService,Sync).
+      
+        2 setAcceptInsecureCerts(true)--> 
+	        3 SSL handling:- 
+	            accept the ssl certificate
+	          ChromeOptions option = new ChromeOptions();
+		  option.setAcceptInsecureCerts(true);//accept ssl certificates from the web pages
+   
+         3 setExperimentalOption("excludeSwithes",new String[] {"enable-automation"})--->
+                   4  Disable Automated messange on screen when selenium  open browser
+                       ChromeOptions option = new ChromeOptions();
+		       option.setExperimentalOption("excludeSwitches",new String[] {"enable-automation"}); 
+
+         4 option.addExtensions(fi)--->
+	            add external file in browser
+                        ChromeOptions option = new ChromeOptions();
+			File fi =  new File("Block.origin.crx");
+			option.addExtensions(fi); 
+			WebDriver driver = new ChromeDriver(option);	
+
+	    
 ------------------------------------ERRORS---------------------------------------------------
                                        
 					//how to resolve error
