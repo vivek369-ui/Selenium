@@ -320,7 +320,7 @@ Basic of selenium
     
                      - it returns all the  elements matching to the  x-path 
 		      -  return type is list
-	              -if there is no element found return empity list
+	              -if there is no element found return empty list
                     - List<WebElement> findElement(By by) return type LIST<WebElement>
 		       List<WebElement> r =obj.findElements(By.className("firstname"));
 	                                &
@@ -633,8 +633,23 @@ Basic of selenium
 
 --------------------------------TestNG--------------------------------------------------------------
 
-    testNG basically unit testing tool orginize test case and test suites, execute test case , genrating reposrt,prioritize,parameterization,parallel tesing and many feature
-    
+    -testNG basically unit testing tool orginize test case and test suites, execute test case , genrating reposrt,prioritize,parameterization,parallel tesing and many feature
+     - insted of use main method we use Annotation in TestNG
+     - NG execute test case base on Alphabetical order for controling the execution of test case we have to set priority using  @Test(priority=1)
+     - if multiple method have same priority then it again cosider based on Alphabetical order
+     - if we not mention any Annotation to method, that perticular method not executed other methods run properly
+     - defalut priority of test method is 0 (if we provied priority to  methods and one method not having priority)
+
+     - execute test case using testNG XML file
+     - 2 way to genrate xml file 
+        1 generate 2 automatically
+
+	   <test thread-count="5" name="Test">
+	    <classes>
+	      <class name="testNG.NewTest"/>
+	    </classes>
+	  </test> <!-- Test -->
+	</suite> <!-- Suite -->
     
 ------------------------------------ERRORS---------------------------------------------------
                                        
