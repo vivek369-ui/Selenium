@@ -680,6 +680,7 @@ Basic of selenium
 				</suite>
     
       2 Annotion :
+      
 	    1  @Test : 
 		     - NG execute test case base on Alphabetical order for controling the execution of test case we have to set priority using  @Test(priority=1)
 		     - if multiple method have same priority then it again cosider based on Alphabetical order
