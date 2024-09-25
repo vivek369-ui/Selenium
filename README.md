@@ -633,23 +633,60 @@ Basic of selenium
 
 --------------------------------TestNG--------------------------------------------------------------
 
-    -testNG basically unit testing tool orginize test case and test suites, execute test case , genrating reposrt,prioritize,parameterization,parallel tesing and many feature
+     - testNG basically unit testing tool orginize test case and test suites, execute test case , genrating reposrt,prioritize,parameterization,parallel tesing and many feature
+     - to achive some feature we have to add some tag  manually in XML file 
      - insted of use main method we use Annotation in TestNG
-     - NG execute test case base on Alphabetical order for controling the execution of test case we have to set priority using  @Test(priority=1)
-     - if multiple method have same priority then it again cosider based on Alphabetical order
-     - if we not mention any Annotation to method, that perticular method not executed other methods run properly
-     - defalut priority of test method is 0 (if we provied priority to  methods and one method not having priority)
+     
+      1 XML :
+		     - execute multiple  test case at a one Suite testNG XML file
+		     - genrate reports
+		     - Capable of triggering parallel execution.
+		     - The file helps organize test cases in a structured manner, making it easier to understand the code.
+		     - Users can define which test classes and methods to run, test parameters, and test groups
+		     - The file makes it easy to create multiple test cases simultaneously, using TestNG Annotations 
+       
+		     - 2 way to genrate xml file(suite) :
+		         1 manually 2 automatically genrated xml
+		
+		         2 automatically genrated : (using Convert to testNG)
+					   testng.xml 
+			           <suite name="Suite">
+			                  ----> its optional mostly used when do parallel testing 
+				   <test thread-count="5" name="Test">
+				    <classes>
+			                       -----------> here we write the name of class
+				      <class name="testNG.NewTest"/>
+				    </classes>
+				  </test> <!-- Test -->
+				</suite> <!-- Suite -->
+		  
+			      - report of testing in folder(test-output) :
+			         emailable-report.html
+				 index.html
+		 
+		        1 manually :
+		                 click on package-->new-->File-->myfile.xml(file name)-->finish-->
+		   
+				  <?xml version="1.0" encoding="UTF-8"?>
+				<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+				<suite name="myFirstSuite">
+					<test name="testcase">
+						<classes>
+							<class name="testNG.TestCase"></class>
+							<class name="testNG.NewTest"></class>
+						</classes>
+					</test>
+				
+				</suite>
+    
+      2 Annotion :
+	    1  @Test : 
+		     - NG execute test case base on Alphabetical order for controling the execution of test case we have to set priority using  @Test(priority=1)
+		     - if multiple method have same priority then it again cosider based on Alphabetical order
+		     - if we not mention any Annotation to method, that perticular method not executed other methods run properly
+		     - defalut priority of test method is 0 (if we provied priority to  methods and one method not having priority)
 
-     - execute test case using testNG XML file
-     - 2 way to genrate xml file 
-        1 generate 2 automatically
-
-	   <test thread-count="5" name="Test">
-	    <classes>
-	      <class name="testNG.NewTest"/>
-	    </classes>
-	  </test> <!-- Test -->
-	</suite> <!-- Suite -->
+        
     
 ------------------------------------ERRORS---------------------------------------------------
                                        
