@@ -680,13 +680,13 @@ Basic of selenium
 				</suite>
     
       2 Annotion :
-      
+                    (@BeforeMethod , @AfterMethod , @BeforeClass , @AfterClass , @BeforeTest , @AfterTest , @BefoteSuite , @AfterSuite)
 	    1  @Test : 
 		     - NG execute test case base on Alphabetical order for controling the execution of test case we have to set priority using  @Test(priority=1)
 		     - if multiple method have same priority then it again cosider based on Alphabetical order
 		     - if we not mention any Annotation to method, that perticular method not executed other methods run properly
 		     - defalut priority of test method is 0 (if we provied priority to  methods and one method not having priority)
-
+           
         
     
 ------------------------------------ERRORS---------------------------------------------------
