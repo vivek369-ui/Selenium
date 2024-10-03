@@ -741,8 +741,58 @@ Basic of selenium
 		     - if multiple method have same priority then it again cosider based on Alphabetical order
 		     - if we not mention any Annotation to method, that perticular method not executed other methods run properly
 		     - defalut priority of test method is 0 (if we provied priority to  methods and one method not having priority)
-           
-        
+       
+------------------------------------------------ Assertion TestNG------------------------------------
+      
+      -class 
+     - when we want to use validation in method we use assertion
+     -only Assertion can make our test case pass or fail
+     - 2 type of Assersion Hard assertion soft assersion
+
+     Hard Assert :
+        - Assert class for hard Assertion
+	- all method are static in Assert class
+      1. Assert.assertEquals(name, name3);--->Boolean
+                 is a method that takes a minimum of 2 arguments and compares actual results with expected results. If both match, the assertion is passed, and the test case is marked 
+                 as passed. assertEquals() can compare Strings, Integers, Doubles, and many more variables
+		 
+      2. Assert.assertNotEquals("vivek", "aara");-->
+              is a method that does the opposite of the assertEquals() method. In this case, the method compares the actual and expected result. But if the assertion condition is met if 
+              the two are not identical. The test case is marked as passed if actual and expected results are not the same.
+	      
+     3. assertTrue(true);--->
+              This Assertion verifies the Boolean value returned by the condition. If the Boolean value is true, then the assertion passes the test case.
+
+     4. AssertFalse(false);---->
+              This method works the opposite of assertTrue(). The Assertion verifies the Boolean value returned by the condition. If the Boolean value is false, the assertion 
+              passes the test case.
+     5. Assert.fail();-->
+                  This method fail method directly
+
+     6. Assert.assertNull(s);-->
+              Verifies if an object contains a null value
+              method means "a passed parameter must be null": if it is not null then the test case fails.
+	      We use Assert.assertNull() to check that the element variable is null, meaning the element does not exist on the page.
+
+     7. Assert.assertNotNull(s);--->
+             If the object is not null, the method throws an 
+             method means "a passed parameter must not be null": if it is null then the test case fails.
+
+
+        -In a hard assertion, when the assertion fails, it terminates or aborts the test. If the tester does not want to terminate the script, they cannot use hard assertions. To 
+        -overcome this, one can use soft assertions.
+
+     SoftAssert : 
+                             Extends            Impliment
+                  SoftAssert---------> Assertion------->IAssertLifecycle(I)
+                  SoftAssert class used for SoftAssertion
+		  Methods are not static in SoftAssert for that reason we have to create Obj of SoftAsset class
+                   SoftAssert a = new SoftAssert();
+	
+		
+	           
+		  
+	      
     
 ------------------------------------ERRORS---------------------------------------------------
                                        
