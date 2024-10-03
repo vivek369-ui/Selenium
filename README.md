@@ -632,7 +632,8 @@ Basic of selenium
               - response Status code imp to find the link is broken or not if the status code is >=400 mens its broken link  or <= 400 its not broken link
 
 --------------------------------TestNG--------------------------------------------------------------
-
+ 
+     - TestNG provides you full control over the test cases and the execution of the test cases. Due to this reason, TestNG is also known as a testing framework
      - testNG basically unit testing tool orginize test case and test suites, execute test case , genrating reposrt,prioritize,parameterization,parallel tesing and many feature
      - to achive some feature we have to add some tag  manually in XML file 
      - insted of use main method we use Annotation in TestNG
@@ -750,8 +751,12 @@ Basic of selenium
      - 2 type of Assersion Hard assertion soft assersion
 
      Hard Assert :
+        - a type of assertion that immediately stops the execution of a test method if an assertion fails. When a hard assertion fails, it: Throws an Assertion Exception, Marks the 
+          method as failed, and Aborts the remaining statements inside the method
         - Assert class for hard Assertion
 	- all method are static in Assert class
+             Assertion hardAssert = new Assertion();
+	     
       1. Assert.assertEquals(name, name3);--->Boolean
                  is a method that takes a minimum of 2 arguments and compares actual results with expected results. If both match, the assertion is passed, and the test case is marked 
                  as passed. assertEquals() can compare Strings, Integers, Doubles, and many more variables
@@ -783,13 +788,22 @@ Basic of selenium
         -overcome this, one can use soft assertions.
 
      SoftAssert : 
+         -Soft asserts are the asserts which continue the execution even after the Assert condition fails
+	 -method are not static 
+  
                              Extends            Impliment
                   SoftAssert---------> Assertion------->IAssertLifecycle(I)
                   SoftAssert class used for SoftAssertion
-		  Methods are not static in SoftAssert for that reason we have to create Obj of SoftAsset class
+		  Methods are not static in SoftAssert for that reason we have to create Obj of SoftAssert class
                    SoftAssert a = new SoftAssert();
-	
-		
+	- all hard Assertion method used in SoftAssert 
+ 
+       1. a.AssertAll()-->
+           - After all the failed assertions are collected, the assertAll() method is called to throw all the exceptions and mark the test as failed.
+           - When a condition fails, a soft assertion continues with the next statement in the test case instead of throwing an exception immediately. This allows the test execution 
+              to  continue even if some conditions fail.
+	   - A soft assert allows the test to continue running even if an assertion fails. It collects all failures and reports them at the end.
+                  
 	           
 		  
 	      
