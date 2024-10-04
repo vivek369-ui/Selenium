@@ -682,50 +682,20 @@ Basic of selenium
     
       2 Annotion :
                     (@BeforeMethod , @AfterMethod , @BeforeClass , @AfterClass , @BeforeTest , @AfterTest , @BefoteSuite , @AfterSuite)
-                                1. @Test
-				Purpose: Indicates that the method is a test case.
-				Usage: Can take various parameters:
-				enabled: Set to false to skip the test.
-				priority: Controls the execution order (lower values run first).
-				groups: Assigns the test to specific groups for grouping and running tests selectively.
-				dependsOnMethods: Specifies methods that must be executed before this test.
-				2. @BeforeSuite
-				Purpose: Runs once before all tests in the suite.
-				Usage: Useful for setup tasks that need to be done before any test runs, like initializing configurations.
-				3. @AfterSuite
-				Purpose: Runs once after all tests in the suite have finished.
-				Usage: Good for cleanup tasks, such as closing resources or generating reports.
-				4. @BeforeTest
-				Purpose: Executes before any test methods in the <test> tag.
-				Usage: Ideal for setup related to a particular test group.
-				5. @AfterTest
-				Purpose: Executes after all test methods in the <test> tag.
-				Usage: Typically used for cleanup specific to that test group.
-				6. @BeforeClass
-				Purpose: Runs once before the first method in the current class.
-				Usage: Useful for initializing resources needed for all tests in that class.
-				7. @AfterClass
-				Purpose: Runs once after all methods in the current class.
-				Usage: Used for cleanup of resources used by the test class.
-				8. @BeforeMethod
-				Purpose: Executes before each test method.
-				Usage: Ideal for preparing a clean state before every test, like resetting variables.
-				9. @AfterMethod
-				Purpose: Executes after each test method.
-				Usage: Useful for actions that need to occur after each test, such as logging or resetting data.
-				10. @DataProvider
-				Purpose: Supplies data for a test method.
-				Usage: Allows running the same test with multiple sets of data, enhancing test coverage without duplicating test methods.
-				11. @Listeners
-				Purpose: Registers listener classes to customize the TestNG execution.
-				Usage: Can handle events like test start, success, failure, and more, allowing for logging or reporting.
-				12. @Factory
-				Purpose: Creates instances of test classes dynamically.
-				Usage: Useful for parameterized tests where different configurations of a class may need to be tested.
-				13. @Parameters
-				Purpose: Passes parameters from the testng.xml configuration file to test methods.
-				Usage: Ideal for externalizing configuration or test data.
-	    1  @Test : 
+		    
+           1.  @BeforeMethod& @AfterMethod--->
+	      annotations are specifically designed to execute methods before and after each test method in the class. This means that if you have multiple test methods in the same 
+              class, the methods annotated with @BeforeMethod and @AfterMethod will run for each test method execution.
+	      
+	   2. @BeforeClass , @AfterClass--->
+                          Runs once before any test methods in the class.
+                          Runs once after all test methods in the class.
+
+			   
+           3.  @BeforeTest , @AfterTest--->
+	                     
+	                           When we used it , its releted to xml <test>
+	   1  @Test : 
 		     - NG execute test case base on Alphabetical order for controling the execution of test case we have to set priority using  @Test(priority=1)
 		     - if multiple method have same priority then it again cosider based on Alphabetical order
 		     - if we not mention any Annotation to method, that perticular method not executed other methods run properly
