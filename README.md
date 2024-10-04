@@ -725,7 +725,12 @@ Basic of selenium
 				13. @Parameters
 				Purpose: Passes parameters from the testng.xml configuration file to test methods.
 				Usage: Ideal for externalizing configuration or test data.
-				14. @Test(enabled = false)
+	    1  @Test : 
+		     - NG execute test case base on Alphabetical order for controling the execution of test case we have to set priority using  @Test(priority=1)
+		     - if multiple method have same priority then it again cosider based on Alphabetical order
+		     - if we not mention any Annotation to method, that perticular method not executed other methods run properly
+		     - defalut priority of test method is 0 (if we provied priority to  methods and one method not having priority)
+                                14. @Test(enabled = false)
 				Purpose: Temporarily disables a test method.
 				Usage: Useful during development or debugging to skip tests without removing the code.
 				15. @Test(priority = x)
@@ -737,11 +742,6 @@ Basic of selenium
 				17. @Test(groups = {"group1"})
 				Purpose: Categorizes test methods into groups.
 				Usage: Facilitates running specific groups of tests, which is helpful in large test suites for targeted testing.
-	    1  @Test : 
-		     - NG execute test case base on Alphabetical order for controling the execution of test case we have to set priority using  @Test(priority=1)
-		     - if multiple method have same priority then it again cosider based on Alphabetical order
-		     - if we not mention any Annotation to method, that perticular method not executed other methods run properly
-		     - defalut priority of test method is 0 (if we provied priority to  methods and one method not having priority)
        
 ------------------------------------------------ Assertion TestNG------------------------------------
       
