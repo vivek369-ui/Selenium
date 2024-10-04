@@ -693,8 +693,17 @@ Basic of selenium
 
 			   
            3.  @BeforeTest , @AfterTest--->
-	                     
-	                           When we used it , its releted to xml <test>
+	                         - its releted to xml <test>
+			        - test is collection of classes is one test in xml 
+	                         -@BeforeTest: Runs before the first test method annotated with @Test. For example, in smoke testing frameworks, @BeforeTest can be used to set up 
+                                 initial data before running other test methods.
+                                 @AfterTest: Runs after all test methods annotated with @Test have completed execution.
+				 
+	   4. @BefoteSuite , @AfterSuite--->
+                               -its execute only once before any suit and after any suit 
+			       -@BeforeSuite: It will run only once, before all tests in the suite are executed. @AfterSuite: A method with this annotation will run once after the 
+                                 execution of all tests in the suite is complete.
+			    
 	   1  @Test : 
 		     - NG execute test case base on Alphabetical order for controling the execution of test case we have to set priority using  @Test(priority=1)
 		     - if multiple method have same priority then it again cosider based on Alphabetical order
