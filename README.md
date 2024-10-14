@@ -673,12 +673,22 @@ Basic of selenium
 				<suite name="myFirstSuite">
 					<test name="testcase">
 						<classes>
-							<class name="testNG.TestCase"></class>
+							<class name="testNG.TestCase">
+                                                        <methods>
+							 ---> exclude used of ignore the test case
+                                                        <exclude name="test2"></exclude>
+			                                <include name="test3"></include>
+				                         --> include used to run that particuler test case
+				                       </methods>
+                                                         </class>
 							<class name="testNG.NewTest"></class>
 						</classes>
 					</test>
 				
 				</suite>
+                  
+
+
     
       2 Annotion :
                     (@BeforeMethod , @AfterMethod , @BeforeClass , @AfterClass , @BeforeTest , @AfterTest , @BefoteSuite , @AfterSuite)
@@ -703,7 +713,8 @@ Basic of selenium
                                -its execute only once before any suit and after any suit 
 			       -@BeforeSuite: It will run only once, before all tests in the suite are executed. @AfterSuite: A method with this annotation will run once after the 
                                  execution of all tests in the suite is complete.
-			    
+	   5.@Ignore --> 
+                         its used for ignore the test case
 	   1  @Test : 
 		     - NG execute test case base on Alphabetical order for controling the execution of test case we have to set priority using  @Test(priority=1)
 		     - if multiple method have same priority then it again cosider based on Alphabetical order
@@ -721,7 +732,22 @@ Basic of selenium
 				17. @Test(groups = {"group1"})
 				Purpose: Categorizes test methods into groups.
 				Usage: Facilitates running specific groups of tests, which is helpful in large test suites for targeted testing.
-       
+                                18. @Test(invocationCount=3)
+				    NO. of time   test case repeate. if the count is 0 the test case will be ignored.         
+	                        19. @Test(invocationTimeOut=33) 
+			                with in given time test case must be execute else test case fail
+		                        default 0.
+			         --> @Test(invocationCount=3 ,invocationTimeOut=33)-->  invocationCount with invocationTimeOut
+	                      20.  @Test(expectedExceptions=Exception.class)
+		              21.  @Test(singleThreaded=true) 
+		                        return type boolean, if set it true then only one thread run test case is calles single thread
+			                its write on class level only single Thread run all tests 
+                              22.   @Test(description="imp") 
+			                  IMP details about test case
+
+
+	                                
+				    
 ------------------------------------------------ Assertion TestNG------------------------------------
       
       -class 
