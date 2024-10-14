@@ -738,11 +738,12 @@ Basic of selenium
 			                with in given time test case must be execute else test case fail
 		                        default 0.
 			         --> @Test(invocationCount=3 ,invocationTimeOut=33)-->  invocationCount with invocationTimeOut
-	                      20.  @Test(expectedExceptions=Exception.class)
-		              21.  @Test(singleThreaded=true) 
+	                        20.  @Test(expectedExceptions=Exception.class)
+			                Manualy provide exception 
+		                21.  @Test(singleThreaded=true) 
 		                        return type boolean, if set it true then only one thread run test case is calles single thread
 			                its write on class level only single Thread run all tests 
-                              22.   @Test(description="imp") 
+                                22.   @Test(description="imp") 
 			                  IMP details about test case
 
 
