@@ -645,13 +645,22 @@ Basic of selenium
 		     - The file helps organize test cases in a structured manner, making it easier to understand the code.
 		     - Users can define which test classes and methods to run, test parameters, and test groups
 		     - The file makes it easy to create multiple test cases simultaneously, using TestNG Annotations 
-       
+                     - the thread count allows for parallel execution of test methods or classes, not necessarily limiting one thread per class. If you have more methods or classes than 
+                    
+    thread-count="5" - parallel="methods": If you have multiple test methods in one or more classes, TestNG will execute up to 5 methods concurrently. If a single class has multiple 
+                                            methods, they can all potentially be run in parallel, using the available threads.
+                        parallel="classes": If you set this, TestNG will run up to 5 classes concurrently, meaning that each class can get one thread, but if you have more than 5 
+                                            classes, only 5 will run at the same time.
+                     - the thread count, the remaining ones will wait until a thread becomes available.
+                     - If you want to ensure a single thread per class, you'd typically set thread-count equal to the number of classes you have in your test suite.
+		     
 		     - 2 way to genrate xml file(suite) :
 		         1 manually 2 automatically genrated xml
 		
 		         2 automatically genrated : (using Convert to testNG)
 					   testng.xml 
 			           <suite name="Suite">
+	                            
 			                  ----> its optional mostly used when do parallel testing 
 				   <test thread-count="5" name="Test">
 				    <classes>
@@ -693,6 +702,8 @@ Basic of selenium
       2 Annotion :
                     (@BeforeMethod , @AfterMethod , @BeforeClass , @AfterClass , @BeforeTest , @AfterTest , @BefoteSuite , @AfterSuite)
 		    
+	   - annotation is designed to run cleanup code after each test method in the class, and it is automatically invoked by TestNG without needing to be specified in the XML	             - These methods are automatically called by TestNG based on their respective annotations, and you don't need to specify them in the XML file.
+    
            1.  @BeforeMethod& @AfterMethod--->
 	      annotations are specifically designed to execute methods before and after each test method in the class. This means that if you have multiple test methods in the same 
               class, the methods annotated with @BeforeMethod and @AfterMethod will run for each test method execution.
