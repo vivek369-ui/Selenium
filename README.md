@@ -704,7 +704,9 @@ Basic of selenium
 			   
            3.  @BeforeTest , @AfterTest--->
 	                         - its releted to xml <test>
-			        - test is collection of classes is one test in xml 
+			        - test is collection of classes,  run olny once before and after
+	                         (In TestNG, a test is a collection of test classes defined in the XML file as a single `<test>` element, which groups multiple `<class>` elements 
+                                  representing the individual test classes to be executed together.)
 	                         -@BeforeTest: Runs before the first test method annotated with @Test. For example, in smoke testing frameworks, @BeforeTest can be used to set up 
                                  initial data before running other test methods.
                                  @AfterTest: Runs after all test methods annotated with @Test have completed execution.
