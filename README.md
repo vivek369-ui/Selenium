@@ -684,10 +684,10 @@ Basic of selenium
 						<classes>
 							<class name="testNG.TestCase">
                                                         <methods>
-							 ---> exclude used of ignore the test case
+							 ---> exclude used of ignore the test case method
                                                         <exclude name="test2"></exclude>
 			                                <include name="test3"></include>
-				                         --> include used to run that particuler test case
+				                         --> include used to run that particuler test case method
 				                       </methods>
                                                          </class>
 							<class name="testNG.NewTest"></class>
@@ -759,8 +759,25 @@ Basic of selenium
                                 22.   @Test(description="imp") 
 			                  IMP details about test case
 
-
-	                                
+                                23.  @Test(dependsOnMethods="test9")  -   @Test(dependsOnMethods={"test9","test2"})
+				           execution of  that method depend on the other method if previes method get error then depended method skip  the execution  
+	                                   we can add multiple methods for dependency
+				24.  @Test(alwaysRun=true) 
+                                             -  defalut false
+                                             - in any situation  test case will be run.
+					      - @Test(dependsOnMethods="test9" , alwaysRun=true)--> its create soft dependency
+					      - if any dependency failes its not effect on  method when we add alwasRun 
+	                        25.   @Test(groups="") 
+			                  <groups>
+						<run>
+						<include name="smoke"></include>
+						</run>
+					</groups>
+                                         it is used to run test case in group with help of <groups> tag and annotation
+                                        - always when we need to run tests in a group creat the copy of master xml and performe grouping opration there 
+				26.   @Test(dependsOnGroups="")
+                                           - one group not depend on one test case 
+                                           - one test case depend on group 
 				    
 ------------------------------------------------ Assertion TestNG------------------------------------
       
