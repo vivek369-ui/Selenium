@@ -699,7 +699,7 @@ Basic of selenium
 
 
     
-      2 Annotion :
+    2 Annotion :
                     (@BeforeMethod , @AfterMethod , @BeforeClass , @AfterClass , @BeforeTest , @AfterTest , @BefoteSuite , @AfterSuite)
 		    
 	   - annotation is designed to run cleanup code after each test method in the class, and it is automatically invoked by TestNG without needing to be specified in the XML	             - These methods are automatically called by TestNG based on their respective annotations, and you don't need to specify them in the XML file.
@@ -715,7 +715,7 @@ Basic of selenium
 			   
            3.  @BeforeTest , @AfterTest--->
 	                         - its releted to xml <test>
-			        - test is collection of classes,  run olny once before and after
+			        - test is collection of classes,  run only once before and after
 	                         (In TestNG, a test is a collection of test classes defined in the XML file as a single `<test>` element, which groups multiple `<class>` elements 
                                   representing the individual test classes to be executed together.)
 	                         -@BeforeTest: Runs before the first test method annotated with @Test. For example, in smoke testing frameworks, @BeforeTest can be used to set up 
@@ -760,8 +760,9 @@ Basic of selenium
 			                  IMP details about test case
 
                                 23.  @Test(dependsOnMethods="test9")  -   @Test(dependsOnMethods={"test9","test2"})
-				           execution of  that method depend on the other method if previes method get error then depended method skip  the execution  
-	                                   we can add multiple methods for dependency
+				           execution of  that method depend on the other method if previes method get error then depended method skip  the execution
+	                                   is called hard Dependency
+	                                   we can add multiple test methods for dependency
 				24.  @Test(alwaysRun=true) 
                                              -  defalut false
                                              - in any situation  test case will be run.
@@ -778,6 +779,19 @@ Basic of selenium
 				26.   @Test(dependsOnGroups="")
                                            - one group not depend on one test case 
                                            - one test case depend on group 
+
+                            IMP 27. parametrization :
+			                             <parameter name="x" value="1000"></parameter>
+	                                            <parameter name="y" value="all good"></parameter>
+					                @Parameters({"x","y"})
+							@Test()
+							public void test2(int x , String y) {
+								System.out.println(+x+"\t"+y);}                                       
+					       - the execution of para only through XML
+	                                       - para tag just helps to define a value
+					       -@Parameters() annotaion used to set the para value for Test method
+					       -To define one or more parameters that can be injected into the test method during execution.
+	    
 				    
 ------------------------------------------------ Assertion TestNG------------------------------------
       
