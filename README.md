@@ -780,18 +780,39 @@ Basic of selenium
                                            - one group not depend on one test case 
                                            - one test case depend on group 
 
-                            IMP 27. parametrization :
+                            IMP 27. parametrization @Parameters :
 			                             <parameter name="x" value="1000"></parameter>
 	                                            <parameter name="y" value="all good"></parameter>
 					                @Parameters({"x","y"})
 							@Test()
 							public void test2(int x , String y) {
-								System.out.println(+x+"\t"+y);}                                       
+								System.out.println(+x+"\t"+y);}  //1000 , all good                                     
 					       - the execution of para only through XML
 	                                       - para tag just helps to define a value
 					       -@Parameters() annotaion used to set the para value for Test method
 					       -To define one or more parameters that can be injected into the test method during execution.
 	    
+	                        28. @DataProvider : 
+			               @DataProvider is used to provide parameters to a test. If you provide the data provider to a test, the test will be run taking a
+		                         different set of  values each time. This is useful for a scenario
+                                            like where you want to login to a site with a different set of username and password each time.
+			               Data driven tesing: huge amount of data itrativly supply to the test case to check its behaver for individual data set 
+	                               -provide data to the Test method
+							@DataProvider(name="pincode")
+						  public Object[][] provideData() {
+							  Object[][] pincode= {{401203},{203401}}; 
+					                  return pincode;}
+		                                        @Test(dataProvider="pincode")
+							public void run(int pincode)
+							{System.out.println(pincode);}
+				        -we can also pass method name as a dataProvider in Test method  
+	                                - use extends or use dataProviderClass
+				        --> @Test(dataProvider="provideData" ,dataProviderClass =DataProvider.class)
+                                          
+-----------------------------------------------Crossbrowser And Parallel--------------------------------------------------------------------
+
+
+
 				    
 ------------------------------------------------ Assertion TestNG------------------------------------
       
