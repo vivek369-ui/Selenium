@@ -11,12 +11,6 @@ Basic of selenium
      - WebDriver Contain 5 Interfaces
       WEbDriver(I): methods used for handle the browser 
      WebElement(I) : its a interface used for handling WebElements(it represent perticuler web element on web site)
-     -whatever we see on web page in called web element
-    -selenium have a methods using that we interact with web elements
-    -Locater methods : its used to find location of perticular (web element)   element(tag) (locate the element on web page)
-    --jar file collection of .class files
-    -- its used to specifiey single web element
-    Action methods:after finding the web element what action will be perform its another part
     Maven : Project bulid  tool (automatically configur jar file) and all project
             maven has 3 repository 
 	               1 local : m2
