@@ -5,7 +5,7 @@ Basic of selenium
 		 
      SearchContext(I)--------->WebDriver(I) -----------> RemoteWebDriver(c)----->ChromiumDriver(c)----------> ChromeDriver,Fiexfor Driver etc..
                       extends
-     SearchContext(I)-------->WebElement(I)
+     SearchContext(I)-------->WebElement(I) 
      
      -RemoteDriver Driver Extends other all drivers
      - WebDriver Contain 5 Interfaces
