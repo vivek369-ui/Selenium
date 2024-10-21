@@ -868,7 +868,10 @@ Basic of selenium
            - When a condition fails, a soft assertion continues with the next statement in the test case instead of throwing an exception immediately. This allows the test execution 
               to  continue even if some conditions fail.
 	   - A soft assert allows the test to continue running even if an assertion fails. It collects all failures and reports them at the end.
-
+---------------------------------- Listeners----------------------------------------------------------------
+         
+	 peforme post action  use Listener
+      post action :    test method pass ,fail , skip besed on test case execution perform certain action thos action are caleed post action. 
   --------------------------ADD External Excel data into program--------------------------------------------- 
 
 	 Apache POI : 
