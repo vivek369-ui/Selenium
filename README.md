@@ -1,7 +1,7 @@
 # Selenium 
 Basic of selenium
 
-                      extends                implements                   extends                 extends
+                      extends                implements                   extends                 extends 
 		 
      SearchContext(I)--------->WebDriver(I) -----------> RemoteWebDriver(c)----->ChromiumDriver(c)----------> ChromeDriver,Fiexfor Driver etc..
                       extends
