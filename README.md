@@ -874,10 +874,33 @@ Basic of selenium
            - When a condition fails, a soft assertion continues with the next statement in the test case instead of throwing an exception immediately. This allows the test execution 
               to  continue even if some conditions fail.
 	   - A soft assert allows the test to continue running even if an assertion fails. It collects all failures and reports them at the end.
-                  
-	           
-		  
-	      
+
+  --------------------------ADD External Excel data into program--------------------------------------------- 
+
+	 Apache POI : 
+                     is an open-source Java library used to read, write, create, and modify Microsoft Office files like Excel, Word, and PowerPoint
+	  Dependancy needed :  Apache POI Common ,  Apache POI API Based On OPC and OOXML Schemas , Apache Commons IO
+  
+                impliment
+     Workbook(I)----------> XSSFWorkbook(c) --> High level representation of a SpreadsheetML workbook
+      Sheet(I)  ----------> XSSFSheet (c) ---> Sheets are the central structures within a workbook, and are where a user does most of his spreadsheet work
+      ROW(I)    ----------> XSSFRow(c) --> Row are the central structures within a Sheet, 
+                 implements                       extends
+      Cell(I)   ------------>  CellBase(Abstract)----------> XSSFCell(C final)--> Cell are the central structures within a Row
+
+       DataFormatter formatter = new DataFormatter(); : l
+       This class is part of the Apache POI library. It helps format the data retrieved from Excel cells,
+       ensuring that it is presented as a string in a user-friendly way.
+       This is an instance of the DataFormatter class that you can use to format cell values
+                 DataFormatter formatter = new DataFormatter();
+		String name = "C:\\Users\\admin\\Desktop\\pincode.xlsx";
+		FileInputStream file = new FileInputStream(name);
+		XSSFWorkbook book = new XSSFWorkbook(file);
+		XSSFSheet data = book.getSheet("Sheet1");
+		XSSFCell cell = data.getRow(8).getCell(1);
+		String info = formatter.formatCellValue(cell);
+		System.out.println(info);
+                      
     
 ------------------------------------ERRORS---------------------------------------------------
                                        
@@ -890,8 +913,8 @@ Basic of selenium
      handle shadowroot 
     how to get color of web element  : getcssvalue()
     any 5 execption in selenum
-     methdo is select class
-
+     methdo in select class
+    class not found error means jar not available   
 
 
 
