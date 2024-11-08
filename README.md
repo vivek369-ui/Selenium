@@ -39,7 +39,7 @@ Basic of selenium
         // all normal locater are find using only attribute value or tag name
        // its used to find (locate) the element //pass attribut into (By.) class
           
-			--->pass locater(location) using By class
+			--->pass locater(location) using By Id
     1.driver.findelment(   By.id()   ).sendKeys("new mobile");
                                   
     2.driver.findElement(By.name("field-keywords")).sendKeys("dd");
