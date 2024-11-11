@@ -869,9 +869,9 @@ Basic of selenium
               to  continue even if some conditions fail.
 	   - A soft assert allows the test to continue running even if an assertion fails. It collects all failures and reports them at the end.
 ---------------------------------- Listeners----------------------------------------------------------------
-         
+          
 	 peforme post action  use Listener
-      post action :    test method pass ,fail , skip besed on test case execution perform certain action thos action are called post action. 
+      post action :  (report genration)  test method pass ,fail , skip besed on test case execution perform certain action thos action are called post action. 
       is a predifine interface (itest listner) impliment in our listner class (also specify the listner class in xml)
       steps 1. test class --> 2. listner class contain listner methods only 
       two way to impliment listner class
