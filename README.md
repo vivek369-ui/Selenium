@@ -20,9 +20,9 @@ Basic of selenium
 	      1 clean : when we run clean cycle old .class file delete
               2 Default : 7 diff phase  
 	                  1 validate : check project valid or not comand-->MVN Validate
-		          2 compile   :if valid porject then compile---> MVN compile
+		          2 compile   :if valid project then compile cretare .class in target file ---> MVN compile
 	                  3 test    : its run all test case which we writen-->MVN test
-		          4 package   : it will validate,compile,test and then packageing create a jar file--->MVN package
+		          4 package   : it will validate,compile,test and then packageing create a jar file in target --->MVN package
 	                  5 verify   : varify jar file-->MVN verify
 		          6 install  : installed in local repo-->install
 	                  7 deploy   : jar file depoly in server-->MVN deploy
