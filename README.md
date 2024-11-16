@@ -22,9 +22,9 @@ Basic of selenium
 	                  1 validate : check project valid or not comand-->MVN Validate
 		          2 compile   :if valid project then compile cretare .class in target file ---> MVN compile
 	                  3 test    : its run all test case which we writen-->MVN test
-		          4 package   : it will validate,compile,test and then packageing create a jar file in target --->MVN package
+		          4 package   : it will validate,compile,test and then packageing create a jar file in target folder --->MVN package
 	                  5 verify   : varify jar file-->MVN verify
-		          6 install  : installed in local repo-->install
+		          6 install  : installed in local repo m2-->install
 	                  7 deploy   : jar file depoly in server-->MVN deploy
 	      3 Site  : prepare site doc
 -----------------------------------------------------------------------------------------------------
