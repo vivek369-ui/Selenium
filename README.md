@@ -17,7 +17,7 @@ Basic of selenium
 		       2 remote : repo1.maven.com
 	               3  Central : mvnrepository.com
             3 lifecycle in maven 
-	      1 clean : when we run clean cycle old .class file delete
+	      1 clean : when we run clean cycle clear targer folder contain (old .class)
               2 Default : 7 diff phase  
 	                  1 validate : check project valid or not comand-->MVN Validate
 		          2 compile   :if valid project then compile cretare .class in target file ---> MVN compile
