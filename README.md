@@ -1111,7 +1111,8 @@ manage().window().setPosition(Point position) – Sets the position of the brows
 	     - NG execute test case base on Alphabetical order for controling the execution of test case we have to set priority using  @Test(priority=1)
 	     - if multiple method have same priority then it again cosider based on Alphabetical order
 	     - if we not mention any Annotation to method, that perticular method not executed other methods run properly
-	     - defalut priority of test method is 0 (if we provied priority to  methods and one method not having priority)
+	     - defalut priority of test method is 0 (if we provied priority to  methods and one 
+	  method not having priority)
                             14. @Test(enabled = false)
 			Purpose: Temporarily disables a test method.
 			Usage: Useful during development or debugging to skip tests without removing the code.
