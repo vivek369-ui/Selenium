@@ -1588,7 +1588,7 @@ Connecting mobile phone with device through wifi.
 
 Device gets connected to phone.
 
-Through mobile application, we connect the device to the router + the mobile itself is connected to same internet (eg: DDC_Lab).
+Through mobile application, we connect the device to theq router + the mobile itself is connected to same internet (eg: DDC_Lab).
 
 Both are connected to internet so device and mobile phone can communicate.
 
