@@ -1584,7 +1584,7 @@ TestFlight is a free tool from Apple that helps developers test and get feedback
 
 Wifi provisioning:
 
-Connecting mobile phone with device through wifi
+Connecting mobile phone with device through wifi.
 
 Device gets connected to phone.
 
